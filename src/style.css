@@ -71,7 +71,8 @@ main {
     background-color: var(--background-white);
     display: flex;
     justify-content: center;
-    padding-top: var(--spacing)
+    padding-top: var(--spacing);
+    border-right: 2px solid var(--background-blue-active)
 }
 
 #project-btn {

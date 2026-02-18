@@ -30,19 +30,21 @@ header {
     display: flex;
     background-color: var(--background-blue);
     height: var(--header);
-    flex-direction: space-between;
+    justify-content: space-between;
     align-items: center;
-    padding-left: var(--spacing);
+    padding: 0 var(--spacing) 0 var(--spacing);
 }
 
 #heading {
     color: var(--background-white);
-    font-size: 3.5rem;
+    font-size: 3rem;
 }
 
 #add-btn {
-    height: 2rem;
-    width: 4rem;
+    height: 2.5rem;
+    width: 7.5rem;
+    font-size: 1rem;
+    font-weight: bold;
     background-color: var(--orange);
     border-radius: var(--border-radius);
     border: none;
@@ -69,13 +71,16 @@ main {
     background-color: var(--background-white);
     display: flex;
     justify-content: center;
+    padding-top: var(--spacing)
 }
 
 #project-btn {
     background-color: var(--background-blue);
     color: var(--background-white);
     height: 3rem;
-    width: 6rem;
+    width: 8rem;
+    font-weight: bold;
+    font-size: 0.9rem;
 }
 
 #project-btn:hover {

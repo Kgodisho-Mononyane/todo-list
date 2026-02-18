@@ -19,6 +19,11 @@
     --border-radius: 0.5rem; 
 }
 
+#add-btn, #project-btn {
+    border-radius: var(--border-radius);
+    border: none;
+}
+
 
 /* HEADER */
 header {
@@ -27,10 +32,12 @@ header {
     height: var(--header);
     flex-direction: space-between;
     align-items: center;
+    padding-left: var(--spacing);
 }
 
 #heading {
-    color: var(--background-white)
+    color: var(--background-white);
+    font-size: 3.5rem;
 }
 
 #add-btn {
@@ -60,15 +67,15 @@ main {
 #left-container {
     width: var(--sidebar);
     background-color: var(--background-white);
+    display: flex;
+    justify-content: center;
 }
 
 #project-btn {
     background-color: var(--background-blue);
     color: var(--background-white);
-    border-radius: var(--border-radius);
     height: 3rem;
     width: 6rem;
-    border: none;
 }
 
 #project-btn:hover {

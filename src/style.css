@@ -1,3 +1,29 @@
-body {
-    background-color: blue;
+/* ALL */
+* {
+    margin: 0;
+    padding: 0;
+    --background-blue: blue;
+    --white: white;
+
+    --display: 10vh;
+    --sidebar: 15vw;
+}
+
+
+/* HEADER */
+header {
+    display: flex;
+    background-color: var(--background-blue);
+    height: var(--display);
+    flex-direction: center;
+    align-items: center;
+}
+
+#heading {
+    color: var(--white)
+}
+
+#add-btn {
+    height: 2rem;
+    width: 4rem;
 }

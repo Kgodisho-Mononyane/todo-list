@@ -16,6 +16,7 @@
     --header: 10vh;
     --sidebar: 14vw;
     --spacing: 1.5em;
+    --border-radius: 0.5rem; 
 }
 
 
@@ -36,7 +37,7 @@ header {
     height: 2rem;
     width: 4rem;
     background-color: var(--orange);
-    border-radius: 0.5rem;
+    border-radius: var(--border-radius);
     border: none;
     color: var(--background-white)
 }
@@ -58,10 +59,27 @@ main {
 
 #left-container {
     width: var(--sidebar);
-    background-color: green;
+    background-color: var(--background-white);
+}
+
+#project-btn {
+    background-color: var(--background-blue);
+    color: var(--background-white);
+    border-radius: var(--border-radius);
+    height: 3rem;
+    width: 6rem;
+    border: none;
+}
+
+#project-btn:hover {
+    background-color: var(--background-blue-hover)
+}
+
+#project-btn:active {
+    background-color: var(--background-blue-active)
 }
 
 #right-container {
-    background-color: purple;
+    background-color: var(--background-gray);
     width: calc(100vw - var(--sidebar))
 }

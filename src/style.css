@@ -1,98 +1,97 @@
 /* ALL */
 * {
-    margin: 0;
-    padding: 0;
-    --background-blue: #1F2937;
-    --background-blue-hover: #3f4f66;
-    --background-blue-active: #647894;
-    --orange:#F97316;
-    --orange-hover: #d36314;
-    --orange-active: #b15412;
-    --background-gray: #dfdde0;
-    --dark-gray: #535353;
-    --background-white: white;
-    --background-black: black;
+  margin: 0;
+  padding: 0;
+  --background-blue: #1f2937;
+  --background-blue-hover: #3f4f66;
+  --background-blue-active: #647894;
+  --orange: #f97316;
+  --orange-hover: #d36314;
+  --orange-active: #b15412;
+  --background-gray: #dfdde0;
+  --dark-gray: #535353;
+  --background-white: white;
+  --background-black: black;
 
-    --header: 10vh;
-    --sidebar: 14vw;
-    --spacing: 1.5em;
-    --border-radius: 0.5rem; 
+  --header: 10vh;
+  --sidebar: 14vw;
+  --spacing: 1.5em;
+  --border-radius: 0.5rem;
 }
 
-#add-btn, #project-btn {
-    border-radius: var(--border-radius);
-    border: none;
+#add-btn,
+#project-btn {
+  border-radius: var(--border-radius);
+  border: none;
 }
-
 
 /* HEADER */
 header {
-    display: flex;
-    background-color: var(--background-blue);
-    height: var(--header);
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 var(--spacing) 0 var(--spacing);
+  display: flex;
+  background-color: var(--background-blue);
+  height: var(--header);
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--spacing) 0 var(--spacing);
 }
 
 #heading {
-    color: var(--background-white);
-    font-size: 3rem;
+  color: var(--background-white);
+  font-size: 3rem;
 }
 
 #add-btn {
-    height: 2.5rem;
-    width: 7.5rem;
-    font-size: 1rem;
-    font-weight: bold;
-    background-color: var(--orange);
-    border-radius: var(--border-radius);
-    border: none;
-    color: var(--background-white)
+  height: 2.5rem;
+  width: 7.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: var(--orange);
+  border-radius: var(--border-radius);
+  border: none;
+  color: var(--background-white);
 }
 
 #add-btn:hover {
-    background-color: var(--orange-hover)
+  background-color: var(--orange-hover);
 }
 
 #add-btn:active {
-    background-color: var(--orange-active);
+  background-color: var(--orange-active);
 }
-
 
 /* MAIN */
 main {
-    display: flex;
-    height: calc(100vh - var(--header));
+  display: flex;
+  height: calc(100vh - var(--header));
 }
 
 #left-container {
-    width: var(--sidebar);
-    background-color: var(--background-white);
-    display: flex;
-    justify-content: center;
-    padding-top: var(--spacing);
-    border-right: 2px solid var(--background-blue-active)
+  width: var(--sidebar);
+  background-color: var(--background-white);
+  display: flex;
+  justify-content: center;
+  padding-top: var(--spacing);
+  border-right: 2px solid var(--background-blue-active);
 }
 
 #project-btn {
-    background-color: var(--background-blue);
-    color: var(--background-white);
-    height: 3rem;
-    width: 8rem;
-    font-weight: bold;
-    font-size: 0.9rem;
+  background-color: var(--background-blue);
+  color: var(--background-white);
+  height: 3rem;
+  width: 8rem;
+  font-weight: bold;
+  font-size: 0.9rem;
 }
 
 #project-btn:hover {
-    background-color: var(--background-blue-hover)
+  background-color: var(--background-blue-hover);
 }
 
 #project-btn:active {
-    background-color: var(--background-blue-active)
+  background-color: var(--background-blue-active);
 }
 
 #right-container {
-    background-color: var(--background-gray);
-    width: calc(100vw - var(--sidebar))
+  background-color: var(--background-gray);
+  width: calc(100vw - var(--sidebar));
 }

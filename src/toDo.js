@@ -1,3 +1,5 @@
+import "./projects.js"
+
 class ToDo {
   constructor(title, description, dueDate, priority) {
     this.title = title;
@@ -34,8 +36,10 @@ class ToDo {
 
 function addToDo(title, description, dueDate, priority) {
   let toDo = new ToDo(title, description, dueDate, priority);
+  defaultProject.array.push(toDo);
   //push to project
 }
+
 
 // const wakeUp = new ToDo("Wake up", "Wake up at 5AM", "Due Date", "low");
 // wakeUp.updateTitle("Wake Up at 5AM")

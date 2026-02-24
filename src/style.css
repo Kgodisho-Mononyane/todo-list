@@ -97,7 +97,7 @@ main {
   background-color: green;
   height: 85%;
   width: 80%;
-  margin-top: var(--spacing)
+  margin-top: var(--spacing);
 }
 
 #right-container {
@@ -105,7 +105,7 @@ main {
   width: calc(100vw - var(--sidebar));
   display: flex;
   flex-direction: column;
-  padding: var(--spacing) var(--spacing) 0 var(--spacing)
+  padding: var(--spacing) var(--spacing) 0 var(--spacing);
 }
 
 #tasks-header {
@@ -118,25 +118,27 @@ main {
   width: 100%;
 }
 
-#add-dialog, #project-dialog {
-  top: 20%;
-  left: 40%;
+#add-dialog,
+#project-dialog {
+  top: 15%;
+  left: 35%;
   border: none;
   border-radius: var(--border-radius);
   background-color: var(--background-gray);
 }
 
-#project-form, #add-form {
+#project-form,
+#add-form {
   display: flex;
   flex-direction: column;
 }
 
 #add-dialog {
   height: 25rem;
-  width: 18.5rem;
+  width: 30rem;
 }
 
 #project-dialog {
   height: 5rem;
-  width: 18.5rem;
+  width: 30rem;
 }

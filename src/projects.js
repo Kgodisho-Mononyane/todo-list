@@ -1,39 +1,37 @@
 class Project {
-    constructor(name) {
-        this.name = name;
-        this.array = [];
-    }
+  constructor(name) {
+    this.name = name;
+    this.array = [];
+  }
 
-    //create
-    //read
-    //update
-    updateName(newName) {
-        this.name = newName;
-    }
+  //create
+  //read
+  //update
+  updateName(newName) {
+    this.name = newName;
+  }
 
-    //delete
-    clearArray() {
-        this.array = [];
-    }
+  //delete
+  clearArray() {
+    this.array = [];
+  }
 
-    deleteProject() {
-        //function that deletes the current object
-    }
+  deleteProject() {
+    //function that deletes the current object
+  }
 }
 
-class ProjectManager {
-
-}
+class ProjectManager {}
 
 let projectsArray = [];
 
 function createProject(name) {
-    let project = new Project(name);
-    projectsArray.push(project)
+  let project = new Project(name);
+  projectsArray.push(project);
 }
 
 createProject("personal");
-createProject("Work")
+createProject("Work");
 
 // const defaultProject = new Project("Default");
 //console.log(work)

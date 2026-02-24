@@ -69,7 +69,9 @@ main {
   width: var(--sidebar);
   background-color: var(--background-white);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
   padding-top: var(--spacing);
   border-right: 2px solid var(--background-blue-active);
 }
@@ -89,6 +91,13 @@ main {
 
 #project-btn:active {
   background-color: var(--background-blue-active);
+}
+
+#project-container {
+  background-color: green;
+  height: 85%;
+  width: 80%;
+  margin-top: var(--spacing)
 }
 
 #right-container {

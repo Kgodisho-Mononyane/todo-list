@@ -103,4 +103,17 @@ main {
 #right-container {
   background-color: var(--background-gray);
   width: calc(100vw - var(--sidebar));
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing) var(--spacing) 0 var(--spacing)
+}
+
+#tasks-header {
+
+}
+
+#tasks-container {
+  background-color: orange;
+  height: 90%;
+  width: 100%;
 }

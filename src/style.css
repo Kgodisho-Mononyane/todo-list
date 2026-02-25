@@ -85,11 +85,11 @@ main {
   font-size: 0.9rem;
 }
 
-#project-btn:hover {
+#project-btn:hover, #project-submit-btn:hover, #add-submit-btn:hover {
   background-color: var(--background-blue-hover);
 }
 
-#project-btn:active {
+#project-btn:active, #project-submit-btn:active, #add-submit-btn:active {
   background-color: var(--background-blue-active);
 }
 

@@ -135,12 +135,6 @@ function addDialogBox() {
   addSubmitBtn.setAttribute("id", "add-submit-btn");
   addSubmitBtn.setAttribute("type", "submit");
   addSubmitBtn.textContent = "SUBMIT";
-  
-  // addSubmitBtn.addEventListener('click', (e) => {
-  //   e.preventDefault();
-  //   console.log("submit button clicked")
-  //   addSubmitBtnClick();
-  // })
   addForm.appendChild(addSubmitBtn);
 
 }
@@ -220,4 +214,4 @@ function projectDialogBox() {
     console.log("Project submit button clicked")
   }
 });
-})()
+})();

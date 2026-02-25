@@ -146,10 +146,11 @@ main {
   width: 30rem;
 }
 
-#add-header, #project-header {
+#add-header,
+#project-header {
   margin-bottom: 1rem;
   font-weight: bold;
-  color: var(--background-blue)
+  color: var(--background-blue);
 }
 
 .form-label {
@@ -164,7 +165,8 @@ main {
   width: 16em;
 }
 
-#add-submit-btn, #project-submit-btn {
+#add-submit-btn,
+#project-submit-btn {
   background-color: var(--background-blue);
   border: none;
   color: var(--background-white);

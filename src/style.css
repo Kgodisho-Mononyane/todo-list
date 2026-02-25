@@ -124,6 +124,7 @@ main {
   left: 35%;
   border: none;
   border-radius: var(--border-radius);
+  /* padding: var(--spacing); */
   background-color: var(--background-gray);
 }
 
@@ -131,6 +132,8 @@ main {
 #add-form {
   display: flex;
   flex-direction: column;
+  padding: var(--spacing);
+  align-items: center;
 }
 
 #add-dialog {
@@ -139,6 +142,17 @@ main {
 }
 
 #project-dialog {
-  height: 5rem;
+  height: 10rem;
   width: 30rem;
+}
+
+#add-submit-btn, #project-submit-btn {
+  background-color: var(--background-blue);
+  border: none;
+  color: var(--background-white);
+  border-radius: var(--border-radius);
+  height: 3em;
+  width: 10em;
+  font-size: 1em;
+  font-weight: bold;
 }

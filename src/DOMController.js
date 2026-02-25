@@ -135,8 +135,27 @@ function addDialogBox() {
   addSubmitBtn.setAttribute("id", "add-submit-btn");
   addSubmitBtn.setAttribute("type", "submit");
   addSubmitBtn.textContent = "SUBMIT";
+  
+  // addSubmitBtn.addEventListener('click', (e) => {
+  //   e.preventDefault();
+  //   console.log("submit button clicked")
+  //   addSubmitBtnClick();
+  // })
   addForm.appendChild(addSubmitBtn);
+
 }
+
+(function(){
+  document.addEventListener("click", (event) => {
+  const addSubmitBtn = event.target.closest("#add-submit-btn");
+
+  if (addSubmitBtn) {
+    event.preventDefault();
+    console.log("Add submit button clicked")
+  }
+});
+})()
+
 
 export const projectBtn = (function () {
   const projectBtn = document.querySelector("#project-btn");
@@ -191,3 +210,14 @@ function projectDialogBox() {
   projectSubmitBtn.textContent = "SUBMIT";
   projectForm.appendChild(projectSubmitBtn);
 }
+
+(function(){
+  document.addEventListener("click", (event) => {
+  const projectSubmitBtn = event.target.closest("#project-submit-btn");
+
+  if (projectSubmitBtn) {
+    event.preventDefault();
+    console.log("Project submit button clicked")
+  }
+});
+})()

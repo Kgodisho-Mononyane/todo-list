@@ -159,6 +159,11 @@ main {
   color: green;
 }
 
+.form-input {
+  height: 1.4em;
+  width: 16em;
+}
+
 #add-submit-btn, #project-submit-btn {
   background-color: var(--background-blue);
   border: none;

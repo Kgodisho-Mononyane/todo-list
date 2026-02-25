@@ -25,23 +25,33 @@
             <h2 id="add-header">ADD NEW TASK</h2>
             <div class="form-element">
               <label class="form-label" for="">Title: </label>
-              <input type="text">
+              <input type="text" class="form-input">
             </div>
             <div class="form-element">
               <label class="form-label" for="">Description: </label>
-              <input type="text">
+              <textarea class="form-input"></textarea>
             </div>
             <div class="form-element">
               <label class="form-label" for="">Due: </label>
-              <input type="date">
+              <input type="date" class="form-input">
             </div>
             <div class="form-element">
               <label class="form-label"for="">Project: </label>
-              <input type="text">
+              <select name="priority" id="priority-options" class="form-input">
+                <option value="test">--Choose a project--</option>
+                <option value="test1">Default</option>
+                <option value="test2">Personal</option>
+                <option value="test3">Work</option>
+              </select>
             </div>
             <div class="form-element">
-              <label class="form-label"for="">Priority</label>
-              <input type="text">
+              <label class="form-label"for="">Priority: </label>
+              <select name="priority" id="priority-options" class="form-input">
+                <option value="test">--Choose an option--</option>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="How">High</option>
+              </select>
             </div>
             <button id="add-submit-btn" type="submit">SUBMIT</button>
           </form>
@@ -51,7 +61,7 @@
             <h2 id="project-header">CREATE PROJECT</h2>
             <div class="form-element">
               <label for="" class="form-label">Project Name: </label>
-              <input type="text">
+              <input type="text" class="form-input">
             </div>
             <button id="project-submit-btn" type="submit">SUBMIT</button>
           </form>

@@ -26,9 +26,9 @@ class ToDo {
   }
 
   updateProject(newProject) {
-    this.project = newProject
+    this.project = newProject;
   }
-  
+
   updatePriority(newPriority) {
     this.priority = newPriority;
   }

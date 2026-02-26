@@ -136,20 +136,18 @@ function addDialogBox() {
   addSubmitBtn.setAttribute("type", "submit");
   addSubmitBtn.textContent = "SUBMIT";
   addForm.appendChild(addSubmitBtn);
-
 }
 
-(function(){
+(function () {
   document.addEventListener("click", (event) => {
-  const addSubmitBtn = event.target.closest("#add-submit-btn");
+    const addSubmitBtn = event.target.closest("#add-submit-btn");
 
-  if (addSubmitBtn) {
-    event.preventDefault();
-    console.log("Add submit button clicked")
-  }
-});
-})()
-
+    if (addSubmitBtn) {
+      event.preventDefault();
+      console.log("Add submit button clicked");
+    }
+  });
+})();
 
 export const projectBtn = (function () {
   const projectBtn = document.querySelector("#project-btn");
@@ -205,16 +203,21 @@ function projectDialogBox() {
   projectForm.appendChild(projectSubmitBtn);
 }
 
-(function(){
+(function () {
   document.addEventListener("click", (event) => {
-  const projectSubmitBtn = event.target.closest("#project-submit-btn");
+    const projectSubmitBtn = event.target.closest("#project-submit-btn");
 
-  if (projectSubmitBtn) {
-    event.preventDefault();
-    console.log("Project submit button clicked")
-  }
-});
+    if (projectSubmitBtn) {
+      event.preventDefault();
+      console.log("Project submit button clicked");
+    }
+  });
 })();
+
+function displayProject() {
+  const projectContainer = document.querySelector("#project-container");
+  projectContainer.innerHTML = "";
+}
 
 function displayToDo() {
   const tasksContainer = document.querySelector("#tasks-container");

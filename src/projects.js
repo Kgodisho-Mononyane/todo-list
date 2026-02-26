@@ -28,6 +28,7 @@ let projectsArray = [];
 function createProject(name) {
   let project = new Project(name);
   projectsArray.push(project);
+  //displayProject();
 }
 
 createProject("personal");
@@ -35,3 +36,4 @@ createProject("Work");
 
 // const defaultProject = new Project("Default");
 //console.log(work)
+console.log(projectsArray);

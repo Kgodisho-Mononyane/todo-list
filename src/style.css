@@ -85,11 +85,15 @@ main {
   font-size: 0.9rem;
 }
 
-#project-btn:hover, #project-submit-btn:hover, #add-submit-btn:hover {
+#project-btn:hover,
+#project-submit-btn:hover,
+#add-submit-btn:hover {
   background-color: var(--background-blue-hover);
 }
 
-#project-btn:active, #project-submit-btn:active, #add-submit-btn:active {
+#project-btn:active,
+#project-submit-btn:active,
+#add-submit-btn:active {
   background-color: var(--background-blue-active);
 }
 
@@ -114,8 +118,17 @@ main {
 
 #tasks-container {
   background-color: orange;
+  display: grid;
   height: 90%;
   width: 100%;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+  gap: var(--spacing);
+}
+
+.todo-container {
+  background-color: white;
+  border-radius: var(--border-radius);
 }
 
 #add-dialog,

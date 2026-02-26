@@ -1,10 +1,11 @@
 import "./projects.js";
 
 class ToDo {
-  constructor(title, description, dueDate, priority) {
+  constructor(title, description, dueDate, project, priority) {
     this.title = title;
     this.description = description;
     this.dueDate = dueDate;
+    this.project = project;
     this.priority = priority;
     this.completed = false;
   }
@@ -24,6 +25,10 @@ class ToDo {
     this.dueDate = newDueDate;
   }
 
+  updateProject(newProject) {
+    this.project = newProject
+  }
+  
   updatePriority(newPriority) {
     this.priority = newPriority;
   }

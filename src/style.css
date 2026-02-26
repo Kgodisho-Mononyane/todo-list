@@ -12,6 +12,9 @@
   --dark-gray: #535353;
   --background-white: white;
   --background-black: black;
+  --low-green: green;
+  --medium-orange: orange;
+  --high-red: red;
 
   --header: 10vh;
   --sidebar: 14vw;
@@ -117,18 +120,58 @@ main {
 }
 
 #tasks-container {
-  background-color: orange;
+  /* background-color: orange; */
   display: grid;
   height: 90%;
   width: 100%;
   grid-template-rows: 1fr 1fr 1fr 1fr;
-  grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
-  gap: var(--spacing);
+  grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+  gap: 1em;
 }
 
 .todo-container {
   background-color: white;
   border-radius: var(--border-radius);
+  padding: 1em 1em 1em 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+}
+
+.todo-header {
+  color: var(--background-blue);
+  font-weight: bold;
+}
+
+.todo-dueDate {
+  color: var(--dark-gray);
+  font-weight: lighter;
+}
+
+.todo-priority {
+  border: 2px;
+  border-radius: 1em;
+  height: 1em;
+  width: fit-content;
+  border: 2px solid black;
+  padding: 0.2em;
+}
+
+.todo-complete-btn {
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--orange);
+  height: 2em;
+  width: 6em;
+  color: var(--background-white);
+}
+
+.todo-complete-btn:hover {
+  background-color: var(--orange-hover);
+}
+
+.todo-complete-btn:active {
+  background-color: var(--orange-active)
 }
 
 #add-dialog,

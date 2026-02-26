@@ -215,3 +215,8 @@ function projectDialogBox() {
   }
 });
 })();
+
+function displayToDo() {
+  const tasksContainer = document.querySelector("#tasks-container");
+  tasksContainer.innerHTML = "";
+}

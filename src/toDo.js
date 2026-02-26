@@ -40,8 +40,9 @@ class ToDo {
 }
 
 function addToDo(title, description, dueDate, priority) {
-  let toDo = new ToDo(title, description, dueDate, priority);
-  defaultProject.array.push(toDo);
+  let toDo = new ToDo(title, description, dueDate, project, priority);
+  //projectName.push(toDo)
+  displayBook(); //link to DOMController
   //push to project
 }
 

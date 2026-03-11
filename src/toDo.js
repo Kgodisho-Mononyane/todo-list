@@ -39,13 +39,13 @@ class ToDo {
   //delete class
 }
 
-function addToDo(title, description, dueDate, priority) {
+export function addToDo(title, description, dueDate, project, priority) {
   let toDo = new ToDo(title, description, dueDate, project, priority);
   //projectName.push(toDo)
-  displayBook(); //link to DOMController
+  //displayBook(); //link to DOMController
   //push to project
 }
 
-// const wakeUp = new ToDo("Wake up", "Wake up at 5AM", "Due Date", "low");
+const wakeUp = addToDo("Wake up", "Wake up at 5AM", "Due Date", "project", "low");
 // wakeUp.updateTitle("Wake Up at 5AM")
-// console.log(wakeUp)
+console.log(wakeUp)

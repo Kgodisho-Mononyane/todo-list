@@ -1,5 +1,4 @@
-import "./projects.js";
-
+import { projectsArray } from "./projects.js";
 class ToDo {
   constructor(title, description, dueDate, project, priority) {
     this.title = title;
@@ -41,11 +40,12 @@ class ToDo {
 
 export function addToDo(title, description, dueDate, project, priority) {
   let toDo = new ToDo(title, description, dueDate, project, priority);
-  //projectName.push(toDo)
+  projectsArray[
+    projectsArray.findIndex((toDo) => toDo.name === project)
+  ].array.push(toDo);
   //displayBook(); //link to DOMController
-  //push to project
 }
 
-const wakeUp = addToDo("Wake up", "Wake up at 5AM", "Due Date", "project", "low");
-// wakeUp.updateTitle("Wake Up at 5AM")
-console.log(wakeUp)
+addToDo("title1", "description1", "25-10-2026", "personal", "low");
+addToDo("title2", "description2", "12-06-2026", "personal", "low");
+addToDo("title3", "description3", "01-03-2025", "work", "high");

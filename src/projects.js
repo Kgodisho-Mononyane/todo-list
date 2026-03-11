@@ -1,4 +1,6 @@
-//import {addToDo} from "./toDo.js";
+import { addToDo } from "./toDo.js";
+
+export let projectsArray = [];
 class Project {
   constructor(name) {
     this.name = name;
@@ -22,16 +24,13 @@ class Project {
   }
 }
 
-let projectsArray = [];
-
 function createProject(name) {
   let project = new Project(name);
-  projectsArray.push(project);
+  projectsArray.push({ ...project });
   //displayProject();
 }
 
 createProject("personal");
 createProject("Work");
 
-projectsArray[0].updateName("test")
-console.log(projectsArray)
+console.log(projectsArray);

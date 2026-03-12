@@ -9,10 +9,6 @@ class Project {
 
   //create
   //read
-  //update
-  updateName(newName) {
-    this.name = newName;
-  }
 
   //delete
   clearArray() {
@@ -21,6 +17,9 @@ class Project {
 
   deleteProject() {
     //function that deletes the current object
+    //this.array = []
+    //this.name = []
+    //projectsArray.splice()
   }
 }
 
@@ -31,6 +30,7 @@ function createProject(name) {
 }
 
 createProject("personal");
-createProject("Work");
+createProject("work");
+createProject("fun")
 
 console.log(projectsArray);

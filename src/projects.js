@@ -7,10 +7,6 @@ class Project {
     this.array = [];
   }
 
-  //create
-  //read
-
-  //delete
   clearArray() {
     this.array = [];
   }

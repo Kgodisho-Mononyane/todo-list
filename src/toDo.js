@@ -1,4 +1,5 @@
 import { projectsArray } from "./projects.js";
+import {} from "date-fns";
 class ToDo {
   constructor(title, description, dueDate, project, priority) {
     this.title = title;
@@ -8,7 +9,7 @@ class ToDo {
     this.priority = priority;
     this.completed = false;
   }
-  
+
   //UPDATE
   updateTitle(newTitle) {
     this.title = newTitle;
@@ -43,7 +44,9 @@ class ToDo {
 
 export function addToDo(title, description, dueDate, project, priority) {
   let toDo = new ToDo(title, description, dueDate, project, priority);
-  //projectsArray[projectsArray.findIndex((toDo) => toDo.name === project)].array.push({...toDo});
+  projectsArray[
+    projectsArray.findIndex((toDo) => toDo.name === project)
+  ].array.push({ ...toDo });
   //displayBook(); //link to DOMController
 }
 

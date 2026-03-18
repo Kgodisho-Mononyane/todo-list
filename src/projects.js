@@ -27,6 +27,6 @@ function createProject(name) {
 
 createProject("personal");
 createProject("work");
-createProject("fun")
+createProject("fun");
 
 console.log(projectsArray);

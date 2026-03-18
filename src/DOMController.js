@@ -214,7 +214,7 @@ function projectDialogBox() {
   });
 })();
 
-function displayProject() {
+function displayProject(/*title, description, due, project, priority*/) {
   const projectContainer = document.querySelector("#project-container");
   projectContainer.innerHTML = "";
 }

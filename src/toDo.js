@@ -1,57 +1,52 @@
-import { projectsArray } from "./projects.js";
-import {} from "date-fns";
+/*
+IMPORT projectsArray from projects.js
+IMPORT date-fns
 
-class ToDo {
-  constructor(title, description, dueDate, project, priority) {
-    this.title = title;
-    this.description = description;
-    this.dueDate = dueDate;
-    this.project = project;
-    this.priority = priority;
-    this.completed = false;
-  }
 
-  //UPDATE
-  updateTitle(newTitle) {
-    this.title = newTitle;
-  }
+CLASS ToDo
+  CONSTRUCTOR title, description, dueDate, project, priority
+    set this.title to title
+    set this.description to description
+    set this.dueDate to dueDate
+    set this.project to project
+    set this.priority to priority
+    set this.completed to false
 
-  updateDescription(newDescription) {
-    this.description = newDescription;
-  }
+    FUNCTION updateTitle(newTitle)
+      this.title to newTitle
+    ENDFUNCTION
 
-  updateDueDate(newDueDate) {
-    this.dueDate = newDueDate;
-  }
+    FUNCTION updateDescription(newDescription)
+      this.description to newDescription
+    ENDFUNCTION
 
-  updateProject(newProject) {
-    this.project = newProject;
-  }
+    FUNCTION UpdateDueDate(newDueDate)
+      this.dueDate = newDueDate
+    ENDFUNCTION
 
-  updatePriority(newPriority) {
-    this.priority = newPriority;
-  }
+    FUNCTION updateProject(newProject)
+      this.project = newProject
+    ENDFUNCTION
 
-  updateCompleted() {
-    this.completed = true;
-    //Add toggle between true and false
-  }
+    FUNCTION updatePriority(newPriority)
+      this.priority = newPriority
+    ENDFUNCTION
 
-  //DELETE
-  deleteToDo() {
-    //Delete the toDo
-  }
-}
+    FUNCTION updateToDo
+    (this.completed === true)?false :true
+      this.completed = true;
+    ENDFUNCTION
 
-export function addToDo(title, description, dueDate, project, priority) {
-  let toDo = new ToDo(title, description, dueDate, project, priority);
+    FUNCTION deleteToDo
+      Delete toDo from projectArray
+    ENDFUNCTION
+ENDCLASS
+
+EXPORT FUNCTION addToDo(title, description, dueDate, project, priority)
+  SET ToDo to new ToDo(title, description, dueDate, project, priority)
+
   projectsArray[
-    projectsArray.findIndex((toDo) => toDo.name === project)
-  ].array.push({ ...toDo });
-  //displayBook(); //link to DOMController
-}
-
-addToDo("title1", "description1", "25-10-2026", "personal", "low");
-addToDo("title2", "description2", "12-06-2026", "personal", "low");
-addToDo("title3", "description3", "01-03-2025", "work", "high");
-addToDo("title4", "description3", "01-03-2025", "work", "high");
+     projectsArray.findIndex((toDo) => toDo.name === project)
+   ].array.push({ ...toDo });
+ENDFUNCTION
+*/

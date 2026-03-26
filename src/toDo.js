@@ -1,5 +1,6 @@
 import { projectsArray } from "./projects.js";
 import {} from "date-fns";
+
 class ToDo {
   constructor(title, description, dueDate, project, priority) {
     this.title = title;

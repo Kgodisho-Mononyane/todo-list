@@ -1,32 +1,21 @@
-import { addToDo } from "./toDo.js";
+/*
+IMPORT { addToDo } from "./toDo.js";
+SET Export projectArray to []
 
-export let projectsArray = [];
-class Project {
-  constructor(name) {
-    this.name = name;
-    this.array = [];
-  }
+CLASS Project
+  Constructor (name)
+    SET this.name to name
+    SET this.array to []
 
-  clearArray() {
-    this.array = [];
-  }
+  FUNCTION DeleteProject
+    Set Array to empty
+    Set Name to empty
+    Remove Project from projectArray
+ENDCLASS
 
-  deleteProject() {
-    //function that deletes the current object
-    //this.array = []
-    //this.name = []
-    //projectsArray.splice()
-  }
-}
 
-function createProject(name) {
-  let project = new Project(name);
-  projectsArray.push({ ...project });
-  //displayProject();
-}
-
-createProject("personal");
-createProject("work");
-createProject("fun");
-
-console.log(projectsArray);
+FUNCTION createProject("name")
+  SET project to New Project
+  PUSH {...project} to projectArray
+ENDFUNCTION
+*/

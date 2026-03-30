@@ -214,16 +214,21 @@ function projectDialogBox() {
   });
 })();
 
-function displayProject(/*title, description, due, project, priority*/) {
-  const projectContainer = document.querySelector("#project-container");
-  projectContainer.innerHTML = "";
-}
 
 function displayToDo() {
   const tasksContainer = document.querySelector("#tasks-container");
   tasksContainer.innerHTML = "";
 }
 
+
+// async function createProject() {
+//   const projectName = document.querySelector("#project-name-input")
+//   const projectForm = document.querySelector("#project-form");
+
+//   projectForm.addEventListener("submit", () => {
+//     addProjectDOM(`${projectName.value}`)
+//   })
+// }
 
 
 function addProjectDOM(name) {

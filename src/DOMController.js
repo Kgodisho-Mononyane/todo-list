@@ -223,3 +223,17 @@ function displayToDo() {
   const tasksContainer = document.querySelector("#tasks-container");
   tasksContainer.innerHTML = "";
 }
+
+
+
+function addProjectDOM(name) {
+  const projectContainer = document.querySelector("#project-container")
+
+  const btn = document.createElement("button");
+  btn.setAttribute("class", "project-btn");
+  btn.textContent = `${name}`;
+  projectContainer.appendChild(btn)
+}
+
+// addProjectDOM("Test")
+// addProjectDOM("Personal")

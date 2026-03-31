@@ -1,52 +1,56 @@
-/*
-IMPORT projectsArray from projects.js
-IMPORT date-fns
+import {projectsArray} from "./projects.js"
+//IMPORT date-fns
 
+class ToDo {
+  constructor(title, description, dueDate, project, priority) {
+    this.title = title;
+    this.description = description;
+    this.dueDate = dueDate;
+    this.project = project;
+    this.priority = priority;
+    this.completed = false;
+  }
 
-CLASS ToDo
-  CONSTRUCTOR title, description, dueDate, project, priority
-    set this.title to title
-    set this.description to description
-    set this.dueDate to dueDate
-    set this.project to project
-    set this.priority to priority
-    set this.completed to false
+  updateTitle(newTitle) {
+    this.title = newTitle;
+  }
 
-    FUNCTION updateTitle(newTitle)
-      this.title to newTitle
-    ENDFUNCTION
+  updateDescription(newDescription) {
+    this.description = newDescription;
+  }
 
-    FUNCTION updateDescription(newDescription)
-      this.description to newDescription
-    ENDFUNCTION
+  updateDueDate(newDueDate) {
+    this.dueDate = newDueDate;
+  }
 
-    FUNCTION UpdateDueDate(newDueDate)
-      this.dueDate = newDueDate
-    ENDFUNCTION
+  updateProject(newProject) {
+    this.project = newProject;
+    //move the toDo into the new project
+  }
 
-    FUNCTION updateProject(newProject)
-      this.project = newProject
-    ENDFUNCTION
+  updatePriority(newPriority) {
+    this.priority = newPriority;
+  }
 
-    FUNCTION updatePriority(newPriority)
-      this.priority = newPriority
-    ENDFUNCTION
-
-    FUNCTION updateToDo
-    (this.completed === true)?false :true
+  updateCompletion() {
+    if (this.completed == false) {
       this.completed = true;
-    ENDFUNCTION
+    } else {
+      this.completed = false;
+    }
+  }
 
-    FUNCTION deleteToDo
-      Delete toDo from projectArray
-    ENDFUNCTION
-ENDCLASS
+  deleteToDo() {
+    //remove toDo from projectArray
+    //delete toDo
+  }
+}
 
-EXPORT FUNCTION addToDo(title, description, dueDate, project, priority)
-  SET ToDo to new ToDo(title, description, dueDate, project, priority)
-
+export function addtoDo(title, description, dueDate, project, priority) {
+  let toDo = new ToDo(title, description, dueDate, project, priority)
+  /*
   projectsArray[
      projectsArray.findIndex((toDo) => toDo.name === project)
    ].array.push({ ...toDo });
-ENDFUNCTION
-*/
+  */
+}

@@ -1,4 +1,4 @@
-import {addToDo} from "./toDo.js"
+import { addToDo } from "./toDo.js";
 export let projectArray = [];
 
 class Project {
@@ -12,13 +12,12 @@ class Project {
     this.name = "";
     //Remove Project from projectArray
   }
-
 }
 
 function createProject(name) {
   let project = new Project(`${name}`);
-  projectArray.push({...project})
+  projectArray.push({ ...project });
 }
 
 createProject("work");
-createProject("personal")
+createProject("personal");

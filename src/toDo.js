@@ -1,4 +1,4 @@
-import {projectArray} from "./projects.js"
+import { projectArray } from "./projects.js";
 //IMPORT date-fns
 
 class ToDo {
@@ -47,12 +47,25 @@ class ToDo {
 }
 
 export function addToDo(title, description, dueDate, project, priority) {
-  let toDo = new ToDo(title, description, dueDate, project, priority)
-  projectArray[projectArray.findIndex((toDo) => toDo.name === project)].array.push({...toDo});
+  let toDo = new ToDo(title, description, dueDate, project, priority);
+  projectArray[
+    projectArray.findIndex((toDo) => toDo.name === project)
+  ].array.push({ ...toDo });
 }
 
-
 addToDo("testing", "Testing description", "tuesday", "work", "low");
-addToDo("clean room", "Clean my bedroom after waking up", "Friday", "personal", "low");
-addToDo("wake up at 5am", "Wake up early Testing description", "wednesday", "personal", "medium");
-console.log(projectArray)
+addToDo(
+  "clean room",
+  "Clean my bedroom after waking up",
+  "Friday",
+  "personal",
+  "low",
+);
+addToDo(
+  "wake up at 5am",
+  "Wake up early Testing description",
+  "wednesday",
+  "personal",
+  "medium",
+);
+console.log(projectArray);

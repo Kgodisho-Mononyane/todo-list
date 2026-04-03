@@ -1,4 +1,4 @@
-import {projectsArray} from "./projects.js"
+import {projectArray} from "./projects.js"
 //IMPORT date-fns
 
 class ToDo {
@@ -46,11 +46,12 @@ class ToDo {
   }
 }
 
-export function addtoDo(title, description, dueDate, project, priority) {
+export function addToDo(title, description, dueDate, project, priority) {
   let toDo = new ToDo(title, description, dueDate, project, priority)
-  /*
-  projectsArray[
-     projectsArray.findIndex((toDo) => toDo.name === project)
-   ].array.push({ ...toDo });
-  */
+  //projectArray[projectArray.findIndex(toDo) => toDo.name === project].array.push({...toDo});
+  projectArray[projectArray.findIndex((toDo) => toDo.name === project)].array.push({ ...toDo });
 }
+
+
+addToDo("testing", "Testing description", "tuesday", "work", "low");
+console.log(projectArray)

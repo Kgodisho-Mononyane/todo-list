@@ -1,4 +1,4 @@
-//IMPORT { addToDo } from "./toDo.js";
+import {addToDo} from "./toDo.js"
 export let projectArray = [];
 
 class Project {
@@ -19,3 +19,6 @@ function createProject(name) {
   let project = new Project(`${name}`);
   projectArray.push({...project})
 }
+
+createProject("work");
+createProject("personal")

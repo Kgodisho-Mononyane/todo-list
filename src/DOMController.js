@@ -1,3 +1,6 @@
+import {addToDo} from "./toDo.js"
+import {projectArray} from "./projects.js"
+
 export const addTask = (function () {
   const addBtn = document.querySelector("#add-btn");
 
@@ -139,14 +142,22 @@ function addDialogBox() {
 }
 
 (function () {
-  document.addEventListener("click", (event) => {
-    const addSubmitBtn = event.target.closest("#add-submit-btn");
+  document.addEventListener("submit", (e) => {
+    const addTaskForm = event.target.closest("#add-form")
+    let toDoTitle = "testName";
+    let toDoDescription = "testDescription";
+    let toDoDueDate = "testDueDate";
+    let toDoProject = "personal";
+    let toDoPriority = "medium";
 
-    if (addSubmitBtn) {
-      event.preventDefault();
-      console.log("Add submit button clicked");
+    if (addTaskForm) {
+      e.preventDefault();
+
+      addToDo(toDoTitle, toDoDescription, toDoDueDate, toDoProject, toDoPriority)
+      console.log("add task submit clicked")
+      console.log(projectArray)
     }
-  });
+  })
 })();
 
 export const projectBtn = (function () {

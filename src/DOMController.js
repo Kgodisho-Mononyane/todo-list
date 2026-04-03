@@ -1,5 +1,5 @@
 import {addToDo} from "./toDo.js"
-import {projectArray} from "./projects.js"
+import {projectArray, createProject} from "./projects.js"
 
 export const addTask = (function () {
   const addBtn = document.querySelector("#add-btn");
@@ -218,16 +218,18 @@ function projectDialogBox() {
 (function addProjectDOM() {
   document.addEventListener("submit", (event) => {
     const projectForm = event.target.closest("#project-form")
+    const projectNameInput = document.querySelector("#project-name-input")
 
     if (projectForm) {
       event.preventDefault();
       console.log("Project form submit button still works")
+      createProject(`${projectNameInput.value}`);
+      addProjectBtn(`${projectNameInput.value}`);
     }
-
+    console.log(projectArray)
     //addproject function
   });
 })();
-
 
 function displayToDo() {
   const tasksContainer = document.querySelector("#tasks-container");
@@ -235,7 +237,7 @@ function displayToDo() {
 }
 
 
-// async function createProject() {
+// async function createProjectcomment() {
 //   const projectName = document.querySelector("#project-name-input")
 //   const projectForm = document.querySelector("#project-form");
 

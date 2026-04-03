@@ -1,6 +1,9 @@
+//IMPORTS
 import {addToDo} from "./toDo.js"
 import {projectArray, createProject} from "./projects.js"
 
+
+//ADD TASK
 export const addTask = (function () {
   const addBtn = document.querySelector("#add-btn");
 
@@ -142,8 +145,8 @@ function addDialogBox() {
 }
 
 /*
-(function addToDoDOM() {
-  document.addEventListener("submit", (e) => {
+(function addToDOM() {
+  document.addEventListener("submit", (event) => {
     const addTaskForm = event.target.closest("#add-form");
     let toDoTitle = document.querySelector("#title-input")//event.target.closest("#title-input");
     let toDoDescription = document.querySelector("#description-input");
@@ -158,9 +161,13 @@ function addDialogBox() {
       // console.log("add task submit clicked")
       console.log(projectArray)
   }
+  })
 })();
 */
 
+
+
+//PROJECT
 export const projectBtn = (function () {
   const projectBtn = document.querySelector("#project-btn");
 
@@ -227,7 +234,7 @@ function projectDialogBox() {
       addProjectBtn(`${projectNameInput.value}`);
     }
     console.log(projectArray)
-    //addproject function
+    //add project function
   });
 })();
 
@@ -237,7 +244,7 @@ function displayToDo() {
 }
 
 
-// async function createProjectcomment() {
+// async function createProjectTEST() {
 //   const projectName = document.querySelector("#project-name-input")
 //   const projectForm = document.querySelector("#project-form");
 
@@ -255,3 +262,14 @@ function addProjectBtn(name) {
   btn.textContent = `${name}`;
   projectContainer.appendChild(btn)
 }
+
+
+/* 
+EVENT LISTENER PROJECT BUTTONS
+  IF ALL
+    display all the to dos in all of the projects
+  else
+    clear out the inner html
+    display all the to dos in the project
+
+*/

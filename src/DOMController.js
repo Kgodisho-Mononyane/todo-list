@@ -13,19 +13,21 @@ export const addTask = (function () {
   });
 })();
 
-(function addToDom() {
+(function addToDoDOM() {
   document.addEventListener("submit", (event) => {
     const addTaskForm = event.target.closest("#add-form");
-    let toDoTitle = document.querySelector("#title-input")//event.target.closest("#title-input");
-    let toDoDescription = document.querySelector("#description-input");
-    let toDoDueDate = "26 June"//document.querySelector("due-input");
-    let toDoProject = "personal"//event.target.closest("#project-input");
-    let toDoPriority = document.querySelector("#priority-options");
+    const dialogBox = event.target.closest("#add-dialog");
+    const toDoTitle = document.querySelector("#title-input")//event.target.closest("#title-input");
+    const toDoDescription = document.querySelector("#description-input");
+    const toDoDueDate = "26 June"//document.querySelector("due-input");
+    const toDoProject = "personal"//event.target.closest("#project-input");
+    const toDoPriority = document.querySelector("#priority-options");
 
     if (addTaskForm) {
       event.preventDefault();
       displayToDo(toDoTitle.value, toDoDueDate.value,toDoPriority.value)
       addToDo(toDoTitle.value, toDoDescription.value, toDoDueDate, toDoProject, toDoPriority.value)
+      dialogBox.close()
       console.log("form submitted")
       console.log(projectArray)
 
@@ -207,6 +209,24 @@ export const projectBtn = (function () {
   });
 })();
 
+(function addProjectDOM() {
+  document.addEventListener("submit", (event) => {
+    const projectForm = event.target.closest("#project-form")
+    const projectNameInput = document.querySelector("#project-name-input")
+    const projectDialog = event.target.closest("#project-dialog");
+
+    if (projectForm) {
+      event.preventDefault();
+      console.log("Project form submit button still works")
+      projectDialog.close()
+      createProject(`${projectNameInput.value}`);
+      addProjectBtn(`${projectNameInput.value}`);
+    }
+    console.log(projectArray)
+    //add project function
+  });
+})();
+
 function projectDialogBox() {
   const leftContainer = document.querySelector("#left-container");
 
@@ -252,21 +272,7 @@ function projectDialogBox() {
   projectForm.appendChild(projectSubmitBtn);
 }
 
-(function addProjectDOM() {
-  document.addEventListener("submit", (event) => {
-    const projectForm = event.target.closest("#project-form")
-    const projectNameInput = document.querySelector("#project-name-input")
 
-    if (projectForm) {
-      event.preventDefault();
-      console.log("Project form submit button still works")
-      createProject(`${projectNameInput.value}`);
-      addProjectBtn(`${projectNameInput.value}`);
-    }
-    console.log(projectArray)
-    //add project function
-  });
-})();
 
 
 

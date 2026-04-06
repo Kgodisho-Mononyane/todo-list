@@ -76,7 +76,7 @@ main {
   /* justify-content: center; */
   align-items: center;
   padding-top: var(--spacing);
-  border-right: 2px solid var(--background-blue-active);
+  border-right: 1px solid var(--background-blue-active);
 }
 
 #project-btn {
@@ -106,16 +106,23 @@ main {
   margin-top: var(--spacing);
   display: flex;
   flex-direction: column;
-  gap: 0.2em;
+  gap: 0.5em;
 }
 
 .project {
   color: var(--background-white);
   height: 2rem;
   width: 100%;
+  display: flex;
   background-color: var(--background-blue-hover);
   border: 2px solid var(--background-blue);
   border-radius: var(--border-radius);
+  align-items: center;
+  padding-left: 0.3em;
+}
+
+.project:hover {
+  background-color: var(--background-blue-active);
 }
 
 
@@ -210,7 +217,7 @@ main {
 }
 
 #project-dialog {
-  height: 10rem;
+  height: 12rem;
   width: 30rem;
 }
 
@@ -225,12 +232,26 @@ main {
   font-size: 1.4em;
   margin-bottom: 0.5em;
   font-weight: bold;
-  color: green;
+  color: var(--background-black);
 }
 
 .form-input {
-  height: 1.4em;
+  height: 2em;
+  font-size: 100%;
   width: 16em;
+}
+
+.form-input:focus {
+  outline: none;
+  border: 2px solid var(--background-blue);
+}
+
+.form-input:invalid {
+    border: 2px solid red;
+}
+
+#description-input {
+  height: 8em;
 }
 
 #add-submit-btn,

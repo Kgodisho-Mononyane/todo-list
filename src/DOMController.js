@@ -144,8 +144,8 @@ function addDialogBox() {
   addForm.appendChild(addSubmitBtn);
 }
 
-/*
-(function addToDOM() {
+
+(function addToDom() {
   document.addEventListener("submit", (event) => {
     const addTaskForm = event.target.closest("#add-form");
     let toDoTitle = document.querySelector("#title-input")//event.target.closest("#title-input");
@@ -155,17 +155,48 @@ function addDialogBox() {
     let toDoPriority = document.querySelector("#priority-options");
 
     if (addTaskForm) {
-      e.preventDefault();
-
-      addToDo(toDoTitle.value, toDoDescription.value, toDoDueDate, toDoProject, toDoPriority.value)
-      // console.log("add task submit clicked")
+      event.preventDefault();
+      displayToDo(toDoTitle.value, toDoDueDate.value,toDoPriority.value)
+      //addToDo(toDoTitle.value, toDoDescription.value, toDoDueDate, toDoProject, toDoPriority.value)
+      console.log("form submitted")
       console.log(projectArray)
-  }
+
+    }
   })
 })();
-*/
+
+function displayToDo(name, dueDate, priority) {
+  const tasksContainer = document.querySelector("#tasks-container");
+  //tasksContainer.innerHTML = "";
+
+  const toDoContainer = document.createElement("div");
+  toDoContainer.setAttribute("class", "todo-container");
+  tasksContainer.appendChild(toDoContainer);
+
+  const toDoHeader = document.createElement("h2");
+  toDoHeader.setAttribute("class","todo-header")
+  toDoHeader.textContent = `${name}`;
+  toDoContainer.appendChild(toDoHeader);
+
+  const toDoDueDate = document.createElement("p");
+  toDoDueDate.setAttribute("class","todo-dueDate")
+  toDoDueDate.textContent = `${dueDate}`;
+  toDoContainer.appendChild(toDoDueDate);
+
+  const toDoPriority = document.createElement("div");
+  toDoPriority.setAttribute("class", "todo-priority");
+  toDoPriority.textContent = `Priority: ${priority}`;
+  toDoContainer.appendChild(toDoPriority)
+
+  const toDoCompleteBtn = document.createElement("button");
+  toDoCompleteBtn.setAttribute("class", "todo-complete-btn");
+  toDoCompleteBtn.textContent = "Complete";
+  toDoContainer.appendChild(toDoCompleteBtn);
+}
 
 
+displayToDo("testing", "tuesday", "low")
+displayToDo("eat breakfast", "tomorrow","high")
 
 //PROJECT
 export const projectBtn = (function () {
@@ -238,10 +269,7 @@ function projectDialogBox() {
   });
 })();
 
-function displayToDo() {
-  const tasksContainer = document.querySelector("#tasks-container");
-  tasksContainer.innerHTML = "";
-}
+
 
 
 // async function createProjectTEST() {
@@ -257,8 +285,8 @@ function displayToDo() {
 function addProjectBtn(name) {
   const projectContainer = document.querySelector("#project-container")
 
-  const btn = document.createElement("button");
-  btn.setAttribute("class", "project-btn");
+  const btn = document.createElement("div");
+  btn.setAttribute("class", "project");
   btn.textContent = `${name}`;
   projectContainer.appendChild(btn)
 }

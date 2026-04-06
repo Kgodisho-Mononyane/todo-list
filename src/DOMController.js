@@ -13,6 +13,27 @@ export const addTask = (function () {
   });
 })();
 
+(function addToDom() {
+  document.addEventListener("submit", (event) => {
+    const addTaskForm = event.target.closest("#add-form");
+    let toDoTitle = document.querySelector("#title-input")//event.target.closest("#title-input");
+    let toDoDescription = document.querySelector("#description-input");
+    let toDoDueDate = "26 June"//document.querySelector("due-input");
+    let toDoProject = "personal"//event.target.closest("#project-input");
+    let toDoPriority = document.querySelector("#priority-options");
+
+    if (addTaskForm) {
+      event.preventDefault();
+      displayToDo(toDoTitle.value, toDoDueDate.value,toDoPriority.value)
+      addToDo(toDoTitle.value, toDoDescription.value, toDoDueDate, toDoProject, toDoPriority.value)
+      console.log("form submitted")
+      console.log(projectArray)
+
+    }
+  })
+})();
+
+
 function addDialogBox() {
   const leftContainer = document.querySelector("#left-container");
 
@@ -144,27 +165,6 @@ function addDialogBox() {
   addForm.appendChild(addSubmitBtn);
 }
 
-
-(function addToDom() {
-  document.addEventListener("submit", (event) => {
-    const addTaskForm = event.target.closest("#add-form");
-    let toDoTitle = document.querySelector("#title-input")//event.target.closest("#title-input");
-    let toDoDescription = document.querySelector("#description-input");
-    let toDoDueDate = "26 June"//document.querySelector("due-input");
-    let toDoProject = "personal"//event.target.closest("#project-input");
-    let toDoPriority = document.querySelector("#priority-options");
-
-    if (addTaskForm) {
-      event.preventDefault();
-      displayToDo(toDoTitle.value, toDoDueDate.value,toDoPriority.value)
-      //addToDo(toDoTitle.value, toDoDescription.value, toDoDueDate, toDoProject, toDoPriority.value)
-      console.log("form submitted")
-      console.log(projectArray)
-
-    }
-  })
-})();
-
 function displayToDo(name, dueDate, priority) {
   const tasksContainer = document.querySelector("#tasks-container");
   //tasksContainer.innerHTML = "";
@@ -195,8 +195,7 @@ function displayToDo(name, dueDate, priority) {
 }
 
 
-displayToDo("testing", "tuesday", "low")
-displayToDo("eat breakfast", "tomorrow","high")
+
 
 //PROJECT
 export const projectBtn = (function () {

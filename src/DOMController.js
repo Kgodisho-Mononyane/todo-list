@@ -20,7 +20,7 @@ export const addTask = (function () {
     const toDoTitle = document.querySelector("#title-input")//event.target.closest("#title-input");
     const toDoDescription = document.querySelector("#description-input");
     const toDoDueDate = "26 June"//document.querySelector("due-input");
-    const toDoProject = "personal"//event.target.closest("#project-input");
+    const toDoProject = "personal"//document.querySelector("#project-input");
     const toDoPriority = document.querySelector("#priority-options");
 
     if (addTaskForm) {
@@ -30,7 +30,6 @@ export const addTask = (function () {
       dialogBox.close()
       console.log("form submitted")
       console.log(projectArray)
-
     }
   })
 })();
@@ -221,11 +220,48 @@ export const projectBtn = (function () {
       projectDialog.close()
       createProject(`${projectNameInput.value}`);
       addProjectBtn(`${projectNameInput.value}`);
+      addProjectOption(`${projectNameInput.value}`)
     }
     console.log(projectArray)
     //add project function
   });
 })();
+
+(function projectBtnsEventListener() {
+  document.addEventListener("click", (event) => {
+    const projectBtns = event.target.closest(".project");
+
+    if (projectBtns) {
+      console.log(`${event.value} clicked`)
+    }
+  })
+  /* 
+EVENT LISTENER PROJECT BUTTONS
+  IF ALL
+    display all the to dos in all of the projects
+  else
+    clear out the inner html
+    display all the to dos in the project
+
+*/
+})();
+
+function addProjectOption(name) {
+  //function that adds a project to the project dropdown in the add task dialog box
+  console.log(`add ${name} to project dropdown`)
+
+  const projectInput = document.querySelector("#project-input")
+  const option = document.createElement("option")
+
+  option.setAttribute("value", "test")
+  option.textContent = "sanity";
+
+  //projectInput.appendChild(option)
+}
+
+function removeProjectOption(name) {
+  //removes the project option from the 
+}
 
 function projectDialogBox() {
   const leftContainer = document.querySelector("#left-container");
@@ -272,21 +308,6 @@ function projectDialogBox() {
   projectForm.appendChild(projectSubmitBtn);
 }
 
-
-
-
-
-
-// async function createProjectTEST() {
-//   const projectName = document.querySelector("#project-name-input")
-//   const projectForm = document.querySelector("#project-form");
-
-//   projectForm.addEventListener("submit", () => {
-//     addProjectBtn(`${projectName.value}`)
-//   })
-// }
-
-
 function addProjectBtn(name) {
   const projectContainer = document.querySelector("#project-container")
 
@@ -295,14 +316,3 @@ function addProjectBtn(name) {
   btn.textContent = `${name}`;
   projectContainer.appendChild(btn)
 }
-
-
-/* 
-EVENT LISTENER PROJECT BUTTONS
-  IF ALL
-    display all the to dos in all of the projects
-  else
-    clear out the inner html
-    display all the to dos in the project
-
-*/

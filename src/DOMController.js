@@ -1,7 +1,6 @@
 //IMPORTS
-import {addToDo} from "./toDo.js"
-import {projectArray, createProject} from "./projects.js"
-
+import { addToDo } from "./toDo.js";
+import { projectArray, createProject } from "./projects.js";
 
 //ADD TASK
 export const addTask = (function () {
@@ -17,23 +16,28 @@ export const addTask = (function () {
   document.addEventListener("submit", (event) => {
     const addTaskForm = event.target.closest("#add-form");
     const dialogBox = event.target.closest("#add-dialog");
-    const toDoTitle = document.querySelector("#title-input")//event.target.closest("#title-input");
+    const toDoTitle = document.querySelector("#title-input"); //event.target.closest("#title-input");
     const toDoDescription = document.querySelector("#description-input");
-    const toDoDueDate = "26 June"//document.querySelector("due-input");
-    const toDoProject = "personal"//document.querySelector("#project-input");
+    const toDoDueDate = "26 June"; //document.querySelector("due-input");
+    const toDoProject = "personal"; //document.querySelector("#project-input");
     const toDoPriority = document.querySelector("#priority-options");
 
     if (addTaskForm) {
       event.preventDefault();
-      displayToDo(toDoTitle.value, toDoDueDate.value,toDoPriority.value)
-      addToDo(toDoTitle.value, toDoDescription.value, toDoDueDate, toDoProject, toDoPriority.value)
-      dialogBox.close()
-      console.log("form submitted")
-      console.log(projectArray)
+      displayToDo(toDoTitle.value, toDoDueDate.value, toDoPriority.value);
+      addToDo(
+        toDoTitle.value,
+        toDoDescription.value,
+        toDoDueDate,
+        toDoProject,
+        toDoPriority.value,
+      );
+      dialogBox.close();
+      console.log("form submitted");
+      console.log(projectArray);
     }
-  })
+  });
 })();
-
 
 function addDialogBox() {
   const leftContainer = document.querySelector("#left-container");
@@ -123,6 +127,14 @@ function addDialogBox() {
   choose.textContent = "--Choose a Project--";
   projectInput.appendChild(choose);
 
+  projectArray.forEach((project) => {
+    const option = document.createElement("option");
+
+    option.setAttribute("value", project.name);
+    option.textContent = project.name;
+    projectInput.appendChild(option);
+  });
+
   const formElement5 = document.createElement("div");
   formElement5.setAttribute("class", "form-element");
   addForm.appendChild(formElement5);
@@ -175,28 +187,25 @@ function displayToDo(name, dueDate, priority) {
   tasksContainer.appendChild(toDoContainer);
 
   const toDoHeader = document.createElement("h2");
-  toDoHeader.setAttribute("class","todo-header")
+  toDoHeader.setAttribute("class", "todo-header");
   toDoHeader.textContent = `${name}`;
   toDoContainer.appendChild(toDoHeader);
 
   const toDoDueDate = document.createElement("p");
-  toDoDueDate.setAttribute("class","todo-dueDate")
+  toDoDueDate.setAttribute("class", "todo-dueDate");
   toDoDueDate.textContent = `${dueDate}`;
   toDoContainer.appendChild(toDoDueDate);
 
   const toDoPriority = document.createElement("div");
   toDoPriority.setAttribute("class", "todo-priority");
   toDoPriority.textContent = `Priority: ${priority}`;
-  toDoContainer.appendChild(toDoPriority)
+  toDoContainer.appendChild(toDoPriority);
 
   const toDoCompleteBtn = document.createElement("button");
   toDoCompleteBtn.setAttribute("class", "todo-complete-btn");
   toDoCompleteBtn.textContent = "Complete";
   toDoContainer.appendChild(toDoCompleteBtn);
 }
-
-
-
 
 //PROJECT
 export const projectBtn = (function () {
@@ -210,32 +219,21 @@ export const projectBtn = (function () {
 
 (function addProjectDOM() {
   document.addEventListener("submit", (event) => {
-    const projectForm = event.target.closest("#project-form")
-    const projectNameInput = document.querySelector("#project-name-input")
+    const projectForm = event.target.closest("#project-form");
+    const projectNameInput = document.querySelector("#project-name-input");
     const projectDialog = event.target.closest("#project-dialog");
 
     if (projectForm) {
       event.preventDefault();
-      console.log("Project form submit button still works")
-      projectDialog.close()
       createProject(`${projectNameInput.value}`);
       addProjectBtn(`${projectNameInput.value}`);
-      addProjectOption(`${projectNameInput.value}`)
+      projectDialog.close();
     }
-    console.log(projectArray)
-    //add project function
+    console.log(projectArray);
   });
 })();
 
-(function projectBtnsEventListener() {
-  document.addEventListener("click", (event) => {
-    const projectBtns = event.target.closest(".project");
-
-    if (projectBtns) {
-      console.log(`${event.value} clicked`)
-    }
-  })
-  /* 
+/* 
 EVENT LISTENER PROJECT BUTTONS
   IF ALL
     display all the to dos in all of the projects
@@ -244,24 +242,7 @@ EVENT LISTENER PROJECT BUTTONS
     display all the to dos in the project
 
 */
-})();
-
-function addProjectOption(name) {
-  //function that adds a project to the project dropdown in the add task dialog box
-  console.log(`add ${name} to project dropdown`)
-
-  const projectInput = document.querySelector("#project-input")
-  const option = document.createElement("option")
-
-  option.setAttribute("value", "test")
-  option.textContent = "sanity";
-
-  //projectInput.appendChild(option)
-}
-
-function removeProjectOption(name) {
-  //removes the project option from the 
-}
+// })();
 
 function projectDialogBox() {
   const leftContainer = document.querySelector("#left-container");
@@ -309,10 +290,10 @@ function projectDialogBox() {
 }
 
 function addProjectBtn(name) {
-  const projectContainer = document.querySelector("#project-container")
+  const projectContainer = document.querySelector("#project-container");
 
   const btn = document.createElement("div");
   btn.setAttribute("class", "project");
   btn.textContent = `${name}`;
-  projectContainer.appendChild(btn)
+  projectContainer.appendChild(btn);
 }

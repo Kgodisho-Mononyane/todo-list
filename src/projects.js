@@ -18,6 +18,3 @@ export function createProject(name) {
   let project = new Project(`${name}`);
   projectArray.push({ ...project });
 }
-
-createProject("work");
-createProject("personal");

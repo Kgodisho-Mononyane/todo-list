@@ -125,7 +125,6 @@ main {
   background-color: var(--background-blue-active);
 }
 
-
 #right-container {
   background-color: var(--background-gray);
   width: calc(100vw - var(--sidebar));
@@ -247,7 +246,7 @@ main {
 }
 
 .form-input:invalid {
-    border: 2px solid red;
+  border: 2px solid red;
 }
 
 #description-input {

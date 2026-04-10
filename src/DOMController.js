@@ -226,7 +226,7 @@ export const projectBtn = (function () {
     if (projectForm) {
       event.preventDefault();
       createProject(`${projectNameInput.value}`);
-      addProjectBtn(`${projectNameInput.value}`);
+      addProjectBtn();
       projectDialog.close();
     }
     console.log(projectArray);
@@ -235,10 +235,14 @@ export const projectBtn = (function () {
 
 /* 
 EVENT LISTENER PROJECT BUTTONS
+  Set container
   IF ALL
-    display all the to dos in all of the projects
+  clear container innerhtml  
+  display all the to dos in all of the projects
   else
-    clear out the inner html
+    clear container inner html
+    create all to dos
+    append to dos to display
     display all the to dos in the project
 
 */
@@ -289,11 +293,15 @@ function projectDialogBox() {
   projectForm.appendChild(projectSubmitBtn);
 }
 
-function addProjectBtn(name) {
-  const projectContainer = document.querySelector("#project-container");
 
-  const btn = document.createElement("div");
-  btn.setAttribute("class", "project");
-  btn.textContent = `${name}`;
-  projectContainer.appendChild(btn);
-}
+function addProjectBtn() {
+    const projectContainer = document.querySelector("#project-container");
+
+    projectArray.forEach((project) => {
+      const projectBtn = document.createElement("div");
+      projectBtn.setAttribute("class", "project");
+      projectBtn.setAttribute("id", `${project.name}-project`)
+      projectBtn.textContent = project.name;
+      projectContainer.appendChild(projectBtn);
+  });
+};

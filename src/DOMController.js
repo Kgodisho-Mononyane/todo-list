@@ -207,6 +207,9 @@ function displayToDo(name, dueDate, priority) {
   toDoContainer.appendChild(toDoCompleteBtn);
 }
 
+
+
+
 //PROJECT
 export const projectBtn = (function () {
   const projectBtn = document.querySelector("#project-btn");
@@ -220,12 +223,14 @@ export const projectBtn = (function () {
 (function addProjectDOM() {
   document.addEventListener("submit", (event) => {
     const projectForm = event.target.closest("#project-form");
-    const projectNameInput = document.querySelector("#project-name-input");
     const projectDialog = event.target.closest("#project-dialog");
+    let projectNameInput = document.querySelector("#project-name-input");
+
 
     if (projectForm) {
       event.preventDefault();
-      createProject(`${projectNameInput.value}`);
+      
+      createProject(projectNameInput.value);
       addProjectBtn();
       projectDialog.close();
     }
@@ -233,9 +238,25 @@ export const projectBtn = (function () {
   });
 })();
 
+
+(function projectBtnEvents() {
+  const container = document.querySelector("#project-container");
+  const containerHeader = document.querySelector("#tasks-header");
+
+  container.addEventListener("click", (event) => {
+    if (event.target.id == "default-project") {
+      //display all to-dos
+      alert("all clicked")
+    } else {
+      //display project specific to dos
+      console.log(`${event.target.textContent} clicked`)
+    }
+    containerHeader.textContent = `${event.target.innerText} projects`;
+  })
+})();
+
 /* 
 EVENT LISTENER PROJECT BUTTONS
-  Set container
   IF ALL
   clear container innerhtml  
   display all the to dos in all of the projects

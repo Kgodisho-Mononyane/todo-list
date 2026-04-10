@@ -2,6 +2,7 @@
 import { addToDo } from "./toDo.js";
 import { projectArray, createProject } from "./projects.js";
 
+
 //ADD TASK
 export const addTask = (function () {
   const addBtn = document.querySelector("#add-btn");
@@ -207,6 +208,22 @@ function displayToDo(name, dueDate, priority) {
   toDoContainer.appendChild(toDoCompleteBtn);
 }
 
+/*
+FUNCTION populateToDoDisplay
+SET toDo container
+
+IF
+  On all folder
+    clear container innerHTML
+    create to do projects dispalys
+    append all the to-dos from all projects to container
+  else
+    clear container innerHTML
+    create to do projects dispalys
+    append all the to-dos from specific project to container
+ENDIF
+ENDFUNCTION
+*/
 
 
 
@@ -255,19 +272,6 @@ export const projectBtn = (function () {
   })
 })();
 
-/* 
-EVENT LISTENER PROJECT BUTTONS
-  IF ALL
-  clear container innerhtml  
-  display all the to dos in all of the projects
-  else
-    clear container inner html
-    create all to dos
-    append to dos to display
-    display all the to dos in the project
-
-*/
-// })();
 
 function projectDialogBox() {
   const leftContainer = document.querySelector("#left-container");
@@ -314,11 +318,11 @@ function projectDialogBox() {
   projectForm.appendChild(projectSubmitBtn);
 }
 
-
 function addProjectBtn() {
     const projectContainer = document.querySelector("#project-container");
 
     projectArray.forEach((project) => {
+      //projectContainer.innerHTML = "";
       const projectBtn = document.createElement("div");
       projectBtn.setAttribute("class", "project");
       projectBtn.setAttribute("id", `${project.name}-project`)

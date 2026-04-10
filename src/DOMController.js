@@ -320,9 +320,9 @@ function projectDialogBox() {
 
 function addProjectBtn() {
     const projectContainer = document.querySelector("#project-container");
+    projectContainer.innerHTML = "";
 
     projectArray.forEach((project) => {
-      //projectContainer.innerHTML = "";
       const projectBtn = document.createElement("div");
       projectBtn.setAttribute("class", "project");
       projectBtn.setAttribute("id", `${project.name}-project`)

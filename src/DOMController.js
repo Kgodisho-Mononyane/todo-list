@@ -1,6 +1,7 @@
 //IMPORTS
 import { addToDo } from "./toDo.js";
 import { projectArray, createProject } from "./projects.js";
+import {trash} from "./images/trash.svg"
 
 
 //

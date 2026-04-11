@@ -126,7 +126,6 @@ main {
 .project:hover /*.project-delete*/{
   background-color: var(--background-blue-active);
   text-decoration: underline;
-  /* display: inline-block; */
 }
 
 .project-delete {
@@ -134,11 +133,10 @@ main {
   width: 1.5rem;
   color: var(--background-white);
   text-decoration: none;
-  background-color: none;
-  display: none;
+  background-color: transparent;
   border-radius: 50%;
-  font-size: 1.3rem;
-  font-weight: bold;
+  font-size: 1rem;
+  /* font-weight: bold; */
   border: none;
 }
 

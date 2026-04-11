@@ -4,6 +4,7 @@ export let projectArray = [];
 class Project {
   constructor(name) {
     this.name = name;
+    this.id = crypto.randomUUID();
     this.array = [];
   }
 
@@ -19,6 +20,6 @@ export function createProject(name) {
   projectArray.push({ ...project });
 }
 
-// createProject("personal");
-// createProject("work");
+createProject("personal");
+createProject("work");
 // createProject("schoolwork")

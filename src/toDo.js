@@ -9,6 +9,7 @@ class ToDo {
     this.project = project;
     this.priority = priority;
     this.completed = false;
+    this.id = crypto.randomUUID();
   }
 
   updateTitle(newTitle) {
@@ -52,3 +53,9 @@ export function addToDo(title, description, dueDate, project, priority) {
     projectArray.findIndex((toDo) => toDo.name === project)
   ].array.push({ ...toDo });
 }
+
+addToDo("wake up", "Wake up at 5AM", "today", "work", "high");
+//addToDo("clean room", "Clean my bedroom", "tomorrow", "personal", "low");
+//addToDo("work on project", "finish my project", "today", "medium", "high")
+
+console.log(projectArray[projectArray.findIndex(project => project.name == "work")])

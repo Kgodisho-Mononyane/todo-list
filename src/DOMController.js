@@ -219,15 +219,14 @@ function displayToDo(name, dueDate, priority) {
 /*
 FUNCTION populateToDoDisplay
 SET toDo container
+clear container innerHTML
 
 IF
-  On all folder
-    clear container innerHTML
-    create to do projects dispalys
+  On all folder    
+    create to do projects displays
     append all the to-dos from all projects to container
   else
-    clear container innerHTML
-    create to do projects dispalys
+    create to do projects displays
     append all the to-dos from specific project to container
 ENDIF
 ENDFUNCTION
@@ -269,7 +268,10 @@ export const projectBtn = (function () {
 
   container.addEventListener("click", (event) => {
     if (event.target.id == "default-project") {
-      //display all to-dos
+      projectArray.forEach(project => {
+        //load all the to dos
+        //displayToDo(name, dueDate, priority)
+      })
       alert("all clicked")
     } else {
       //display project specific to dos
@@ -348,5 +350,17 @@ function addProjectBtn() {
       projectBtn.textContent = `${project.name.charAt(0).toUpperCase() + project.name.slice(1)}`
       //add delete button
       projectContainer.appendChild(projectBtn);
+
+      const deleteBtn = document.createElement("button");
+      deleteBtn.setAttribute("class", "project-delete")
+      deleteBtn.textContent = "X";
+      projectBtn.appendChild(deleteBtn)
   });
 };
+
+
+displayToDo("number 1", "today", "low")
+displayToDo("wake up", "tomorrow", "medium")
+
+
+console.log(projectArray)

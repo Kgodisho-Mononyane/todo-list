@@ -3,6 +3,14 @@ import { addToDo } from "./toDo.js";
 import { projectArray, createProject } from "./projects.js";
 
 
+//
+function init() {
+  allBtn();
+  // add all function
+}
+
+init();
+
 //ADD TASK
 export const addTask = (function () {
   const addBtn = document.querySelector("#add-btn");
@@ -318,15 +326,28 @@ function projectDialogBox() {
   projectForm.appendChild(projectSubmitBtn);
 }
 
+function allBtn() {
+  const projectContainer = document.querySelector("#project-container");
+  
+  const allBtn = document.createElement("div");
+      allBtn.setAttribute("class", "project");
+      allBtn.setAttribute("id", "default-project")
+      allBtn.textContent = "All";
+      //add delete button
+      projectContainer.appendChild(allBtn);
+}
+
 function addProjectBtn() {
     const projectContainer = document.querySelector("#project-container");
     projectContainer.innerHTML = "";
+    allBtn();
 
     projectArray.forEach((project) => {
       const projectBtn = document.createElement("div");
       projectBtn.setAttribute("class", "project");
       projectBtn.setAttribute("id", `${project.name}-project`)
       projectBtn.textContent = project.name;
+      //add delete button
       projectContainer.appendChild(projectBtn);
   });
 };

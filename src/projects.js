@@ -19,6 +19,6 @@ export function createProject(name) {
   projectArray.push({ ...project });
 }
 
-createProject("personal");
-createProject("work");
-createProject("schoolwork")
+// createProject("personal");
+// createProject("work");
+// createProject("schoolwork")

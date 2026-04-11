@@ -1,16 +1,15 @@
 //IMPORTS
 import { addToDo } from "./toDo.js";
 import { projectArray, createProject } from "./projects.js";
-import {trash} from "./images/trash.svg"
 
 
-//
+//INIT
 function init() {
   allBtn();
-  // add all function
 }
 
 init();
+
 
 //ADD TASK
 export const addTask = (function () {
@@ -250,11 +249,10 @@ export const projectBtn = (function () {
   document.addEventListener("submit", (event) => {
     const projectForm = event.target.closest("#project-form");
     const projectDialog = event.target.closest("#project-dialog");
-    let projectNameInput = document.querySelector("#project-name-input");
-
-
+    
     if (projectForm) {
       event.preventDefault();
+      let projectNameInput = projectForm.querySelector("#project-name-input");
       
       createProject(projectNameInput.value);
       addProjectBtn();
@@ -317,6 +315,7 @@ function projectDialogBox() {
   const projectNameInput = document.createElement("input");
   projectNameInput.setAttribute("type", "text");
   projectNameInput.setAttribute("class", "form-input");
+  projectNameInput.setAttribute("name","project-name")
   projectNameInput.setAttribute("id", "project-name-input");
   projectNameFormElement.appendChild(projectNameInput);
 

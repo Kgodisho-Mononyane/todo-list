@@ -119,12 +119,31 @@ main {
   border: 2px solid var(--background-blue);
   border-radius: var(--border-radius);
   align-items: center;
+  justify-content: space-between;
   padding-left: 0.3em;
 }
 
-.project:hover {
+.project:hover /*.project-delete*/{
   background-color: var(--background-blue-active);
   text-decoration: underline;
+  /* display: inline-block; */
+}
+
+.project-delete {
+  height: 1.5rem;
+  width: 1.5rem;
+  color: var(--background-white);
+  text-decoration: none;
+  background-color: none;
+  display: none;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border: none;
+}
+
+.project-delete:hover {
+  background-color: green/*var(--background-blue-active)*/;
 }
 
 #right-container {

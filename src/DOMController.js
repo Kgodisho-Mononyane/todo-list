@@ -140,7 +140,7 @@ function addDialogBox() {
     const option = document.createElement("option");
 
     option.setAttribute("value", project.name);
-    option.textContent = project.name;
+    option.textContent = `${project.name.charAt(0).toUpperCase() + project.name.slice(1)}`//project.name;
     projectInput.appendChild(option);
   });
 
@@ -275,7 +275,7 @@ export const projectBtn = (function () {
       //display project specific to dos
       console.log(`${event.target.textContent} clicked`)
     }
-    containerHeader.textContent = `${event.target.innerText} projects`;
+    containerHeader.textContent = `${event.target.innerText.toUpperCase()} PROJECTS`;
   })
 })();
 
@@ -333,7 +333,6 @@ function allBtn() {
       allBtn.setAttribute("class", "project");
       allBtn.setAttribute("id", "default-project")
       allBtn.textContent = "All";
-      //add delete button
       projectContainer.appendChild(allBtn);
 }
 
@@ -346,7 +345,7 @@ function addProjectBtn() {
       const projectBtn = document.createElement("div");
       projectBtn.setAttribute("class", "project");
       projectBtn.setAttribute("id", `${project.name}-project`)
-      projectBtn.textContent = project.name;
+      projectBtn.textContent = `${project.name.charAt(0).toUpperCase() + project.name.slice(1)}`
       //add delete button
       projectContainer.appendChild(projectBtn);
   });

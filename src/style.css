@@ -22,12 +22,6 @@
   --border-radius: 0.5rem;
 }
 
-#add-btn,
-#project-btn {
-  border-radius: var(--border-radius);
-  border: none;
-}
-
 /* HEADER */
 header {
   display: flex;
@@ -38,9 +32,17 @@ header {
   padding: 0 var(--spacing) 0 var(--spacing);
 }
 
+/* HEADING */
 #heading {
   color: var(--background-white);
   font-size: 3rem;
+}
+
+/* ADD-BTN */
+#add-btn,
+#project-btn {
+  border-radius: var(--border-radius);
+  border: none;
 }
 
 #add-btn {
@@ -68,6 +70,7 @@ main {
   height: calc(100vh - var(--header));
 }
 
+/* LEFT-CONTAINER */
 #left-container {
   width: var(--sidebar);
   background-color: var(--background-white);
@@ -79,6 +82,7 @@ main {
   border-right: 1px solid var(--background-blue-active);
 }
 
+/* PROJECT-BTN */
 #project-btn {
   background-color: var(--background-blue);
   color: var(--background-white);
@@ -100,6 +104,7 @@ main {
   background-color: var(--background-blue-active);
 }
 
+/* PROJECT-CONTAINER */
 #project-container {
   height: 85%;
   width: 80%;
@@ -109,6 +114,7 @@ main {
   gap: 0.5em;
 }
 
+/* PROJECTS */
 .project {
   color: var(--background-white);
   height: 2rem;
@@ -123,7 +129,7 @@ main {
   padding-left: 0.3em;
 }
 
-.project:hover /*.project-delete*/{
+.project:hover /*.project-delete*/ {
   background-color: var(--background-blue-active);
   text-decoration: underline;
 }
@@ -141,9 +147,16 @@ main {
 }
 
 .project-delete:hover {
-  background-color: green/*var(--background-blue-active)*/;
+  background-color: green /*var(--background-blue-active)*/;
 }
 
+/* .selected {
+  background-color: pink;
+  color: green;
+  border: 2px solid red;
+} */
+
+/* RIGHT-CONTAINER */
 #right-container {
   background-color: var(--background-gray);
   width: calc(100vw - var(--sidebar));
@@ -152,10 +165,12 @@ main {
   padding: var(--spacing) var(--spacing) 0 var(--spacing);
 }
 
+/* TASKS-HEADER */
 #tasks-header {
   margin-bottom: 0.3em;
 }
 
+/* TASKS-CONTAINER */
 #tasks-container {
   /* background-color: orange; */
   display: grid;
@@ -166,6 +181,7 @@ main {
   gap: 1em;
 }
 
+/* TODO */
 .todo-container {
   background-color: white;
   border-radius: var(--border-radius);
@@ -211,6 +227,7 @@ main {
   background-color: var(--orange-active);
 }
 
+/* ADD DIALOG && PROJECT DIALOG */
 #add-dialog,
 #project-dialog {
   top: 15%;

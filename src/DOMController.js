@@ -1,7 +1,6 @@
 //IMPORTS
 import { addToDo } from "./toDo.js";
-import { projectArray, createProject } from "./projects.js";
-
+import { projectArray, createProject, Project } from "./projects.js";
 
 //INIT
 function init() {
@@ -10,8 +9,7 @@ function init() {
 
 init();
 
-
-//ADD TASK
+//TO DO EVENT LISTENERS
 export const addTask = (function () {
   const addBtn = document.querySelector("#add-btn");
 
@@ -48,6 +46,7 @@ export const addTask = (function () {
   });
 })();
 
+//TO DO CREATE ELEMENTS
 function addDialogBox() {
   const leftContainer = document.querySelector("#left-container");
 
@@ -140,7 +139,7 @@ function addDialogBox() {
     const option = document.createElement("option");
 
     option.setAttribute("value", project.name);
-    option.textContent = `${project.name.charAt(0).toUpperCase() + project.name.slice(1)}`//project.name;
+    option.textContent = `${project.name.charAt(0).toUpperCase() + project.name.slice(1)}`; //project.name;
     projectInput.appendChild(option);
   });
 
@@ -191,6 +190,8 @@ function displayToDo(name, dueDate, priority) {
   const tasksContainer = document.querySelector("#tasks-container");
   //tasksContainer.innerHTML = "";
 
+  //projectArray[projectArray.findIndex(obj => obj.name == "personal")].array(toDos => {
+
   const toDoContainer = document.createElement("div");
   toDoContainer.setAttribute("class", "todo-container");
   tasksContainer.appendChild(toDoContainer);
@@ -232,9 +233,9 @@ ENDIF
 ENDFUNCTION
 */
 
+//TO DO FUNCTIONS
 
-
-//PROJECT
+//PROJECT EVENT LISTENERS
 export const projectBtn = (function () {
   const projectBtn = document.querySelector("#project-btn");
 
@@ -248,11 +249,11 @@ export const projectBtn = (function () {
   document.addEventListener("submit", (event) => {
     const projectForm = event.target.closest("#project-form");
     const projectDialog = event.target.closest("#project-dialog");
-    
+
     if (projectForm) {
       event.preventDefault();
       let projectNameInput = projectForm.querySelector("#project-name-input");
-      
+
       createProject(projectNameInput.value);
       addProjectBtn();
       projectDialog.close();
@@ -261,26 +262,62 @@ export const projectBtn = (function () {
   });
 })();
 
-
 (function projectBtnEvents() {
   const container = document.querySelector("#project-container");
   const containerHeader = document.querySelector("#tasks-header");
 
   container.addEventListener("click", (event) => {
     if (event.target.id == "default-project") {
-      projectArray.forEach(project => {
+      projectArray.forEach((project) => {
         //load all the to dos
         //displayToDo(name, dueDate, priority)
-      })
-      alert("all clicked")
+      });
+      alert("all clicked");
     } else {
+      // projectArray.forEach(project.array => {
+      //   console.table(project.array[0])
+      // })
       //display project specific to dos
-      console.log(`${event.target.textContent} clicked`)
+      //projectArray.forEach(toDo => )
+      //event.target.classlist.toggle("selected")
+      console.log(`${event.target.textContent} clicked`);
     }
     containerHeader.textContent = `${event.target.innerText.toUpperCase()} PROJECTS`;
-  })
+  });
 })();
 
+//PROJECT CREATE ELEMENTS
+function allBtn() {
+  const projectContainer = document.querySelector("#project-container");
+
+  const allBtn = document.createElement("div");
+  allBtn.setAttribute("class", "project");
+  allBtn.setAttribute("id", "default-project");
+  allBtn.textContent = "All";
+  projectContainer.appendChild(allBtn);
+}
+
+function addProjectBtn() {
+  const projectContainer = document.querySelector("#project-container");
+  projectContainer.innerHTML = "";
+  allBtn();
+
+  projectArray.forEach((project) => {
+    const projectBtn = document.createElement("div");
+    projectBtn.setAttribute("class", "project");
+    projectBtn.setAttribute("id", `${project.name}-project`);
+    projectBtn.textContent = `${project.name.charAt(0).toUpperCase() + project.name.slice(1)}`;
+    //add delete button
+    projectContainer.appendChild(projectBtn);
+
+    /*
+      DELETE FUNCTIONALITY
+      const deleteBtn = document.createElement("button");
+      deleteBtn.setAttribute("class", "project-delete")
+      deleteBtn.textContent = "X";
+      projectBtn.appendChild(deleteBtn)*/
+  });
+}
 
 function projectDialogBox() {
   const leftContainer = document.querySelector("#left-container");
@@ -317,7 +354,7 @@ function projectDialogBox() {
   const projectNameInput = document.createElement("input");
   projectNameInput.setAttribute("type", "text");
   projectNameInput.setAttribute("class", "form-input");
-  projectNameInput.setAttribute("name","project-name")
+  projectNameInput.setAttribute("name", "project-name");
   projectNameInput.setAttribute("id", "project-name-input");
   projectNameFormElement.appendChild(projectNameInput);
 
@@ -328,39 +365,11 @@ function projectDialogBox() {
   projectForm.appendChild(projectSubmitBtn);
 }
 
-function allBtn() {
-  const projectContainer = document.querySelector("#project-container");
-  
-  const allBtn = document.createElement("div");
-      allBtn.setAttribute("class", "project");
-      allBtn.setAttribute("id", "default-project")
-      allBtn.textContent = "All";
-      projectContainer.appendChild(allBtn);
-}
+//PROJECT FUNCTIONS
 
-function addProjectBtn() {
-    const projectContainer = document.querySelector("#project-container");
-    projectContainer.innerHTML = "";
-    allBtn();
-
-    projectArray.forEach((project) => {
-      const projectBtn = document.createElement("div");
-      projectBtn.setAttribute("class", "project");
-      projectBtn.setAttribute("id", `${project.name}-project`)
-      projectBtn.textContent = `${project.name.charAt(0).toUpperCase() + project.name.slice(1)}`
-      //add delete button
-      projectContainer.appendChild(projectBtn);
-
-      const deleteBtn = document.createElement("button");
-      deleteBtn.setAttribute("class", "project-delete")
-      deleteBtn.textContent = "X";
-      projectBtn.appendChild(deleteBtn)
-  });
-};
-
-
-displayToDo("number 1", "today", "low")
-displayToDo("wake up", "tomorrow", "medium")
-
-
-console.log(projectArray)
+//TEST CODE
+displayToDo("number 1", "today", "low");
+displayToDo("wake up", "tomorrow", "medium");
+console.log(
+  projectArray[projectArray.findIndex((obj) => obj.name == "personal")].array,
+);

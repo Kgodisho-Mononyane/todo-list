@@ -229,7 +229,8 @@ main {
 
 /* ADD DIALOG && PROJECT DIALOG */
 #add-dialog,
-#project-dialog {
+#project-dialog,
+#display-dialog {
   top: 15%;
   left: 35%;
   border: none;

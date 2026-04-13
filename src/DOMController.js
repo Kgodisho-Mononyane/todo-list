@@ -46,6 +46,19 @@ export const addTask = (function () {
   });
 })();
 
+(function openToDoDisplay() {
+  document.addEventListener("click", (event) => {
+    const toDoContainer = event.target.closest(".todo-container");
+    //const display = event.target.closest("#display-dialog")
+
+    if (toDoContainer) {
+      //display.showModal();
+      console.log("container clicked")
+    }
+  })
+  
+})();
+
 //TO DO CREATE ELEMENTS
 function addDialogBox() {
   const leftContainer = document.querySelector("#left-container");
@@ -217,22 +230,6 @@ function displayToDo(name, dueDate, priority) {
   toDoContainer.appendChild(toDoCompleteBtn);
 }
 
-/*
-FUNCTION populateToDoDisplay
-SET toDo container
-clear container innerHTML
-
-IF
-  On all folder    
-    create to do projects displays
-    append all the to-dos from all projects to container
-  else
-    create to do projects displays
-    append all the to-dos from specific project to container
-ENDIF
-ENDFUNCTION
-*/
-
 //TO DO FUNCTIONS
 
 //PROJECT EVENT LISTENERS
@@ -274,6 +271,7 @@ export const projectBtn = (function () {
       });
       alert("all clicked");
     } else {
+      //append all the to-dos from specific project to container
       // projectArray.forEach(project.array => {
       //   console.table(project.array[0])
       // })
@@ -370,6 +368,19 @@ function projectDialogBox() {
 //TEST CODE
 displayToDo("number 1", "today", "low");
 displayToDo("wake up", "tomorrow", "medium");
-console.log(
-  projectArray[projectArray.findIndex((obj) => obj.name == "personal")].array,
-);
+console.table(
+  projectArray[projectArray.findIndex((obj) => obj.name == "personal")].array
+)
+
+createProject("personal");
+createProject("work");
+createProject("school");
+addToDo("title1", "description1", "today", "personal", "low");
+addToDo("title2", "description2", "today", "personal", "medium");
+addToDo("title3", "description3", "today", "work", "high");
+addToDo("title4", "description4", "today", "work", "low");
+addToDo("title5", "description5", "today", "school", "medium");
+addToDo("title6", "description6", "today", "school", "high");
+
+console.log(projectArray)
+console.log('test')

@@ -264,11 +264,13 @@ export const projectBtn = (function () {
   const taskContainer = document.querySelector("#tasks-container")
   const containerHeader = document.querySelector("#tasks-header");
 
-
   
   projectContainer.addEventListener("click", (event) => {
     if (event.target.id == "default-project") {
       taskContainer.innerHTML = "";
+      projectArray.flatMap(project => project.array).forEach(toDo => {
+        displayToDo(toDo.title, toDo.dueDate, toDo.priority)
+      })
       //load all the toDos from all the projects
       //displayToDo(name, dueDate, priority)
       console.log("All button clicked")
@@ -370,5 +372,10 @@ function projectDialogBox() {
 displayToDo("number 1", "today", "low");
 displayToDo("wake up", "tomorrow", "medium");
 
-//console.log(projectArray)
-console.log(projectArray[projectArray.findIndex(project => project.name == "work")].array)
+console.log()
+
+//arr.flatMap(project => project.array)
+// console.log(projectArray.array.forEach(element => {
+  
+// }));
+//console.log(projectArray[projectArray.findIndex(project => project.name == "work")].array)

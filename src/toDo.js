@@ -58,4 +58,9 @@ export function addToDo(title, description, dueDate, project, priority) {
 }
 
 //TEST CODE
-
+addToDo("title1", "description1", "today", "personal", "low");
+addToDo("title2", "description2", "today", "personal", "medium");
+addToDo("title3", "description3", "today", "work", "high");
+addToDo("title4", "description4", "today", "work", "low");
+addToDo("title5", "description5", "today", "school", "medium");
+addToDo("title6", "description6", "today", "school", "high");

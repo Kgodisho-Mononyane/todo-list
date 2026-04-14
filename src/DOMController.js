@@ -260,29 +260,30 @@ export const projectBtn = (function () {
 })();
 
 (function projectBtnEvents() {
-  const container = document.querySelector("#project-container");
+  const projectContainer = document.querySelector("#project-container");
+  const taskContainer = document.querySelector("#tasks-container")
   const containerHeader = document.querySelector("#tasks-header");
 
-  container.addEventListener("click", (event) => {
+
+  
+  projectContainer.addEventListener("click", (event) => {
     if (event.target.id == "default-project") {
-      projectArray.forEach((project) => {
-        //load all the to dos
-        //displayToDo(name, dueDate, priority)
-      });
-      alert("all clicked");
+      taskContainer.innerHTML = "";
+      //load all the toDos from all the projects
+      //displayToDo(name, dueDate, priority)
+      console.log("All button clicked")
     } else {
+      taskContainer.innerHTML = "";
       //append all the to-dos from specific project to container
-      // projectArray.forEach(project.array => {
-      //   console.table(project.array[0])
-      // })
-      //display project specific to dos
-      //projectArray.forEach(toDo => )
-      //event.target.classlist.toggle("selected")
-      console.log(`${event.target.textContent} clicked`);
+      console.log(`${event.target.textContent} clicked`)
+      projectArray[projectArray.findIndex(project => project.name == "personal"/*remove hardcode*/)].array.forEach(toDo => {
+        displayToDo(toDo.title, toDo.dueDate, toDo.priority)
+      })
     }
     containerHeader.textContent = `${event.target.innerText.toUpperCase()} PROJECTS`;
-  });
+  })
 })();
+
 
 //PROJECT CREATE ELEMENTS
 function allBtn() {
@@ -368,19 +369,6 @@ function projectDialogBox() {
 //TEST CODE
 displayToDo("number 1", "today", "low");
 displayToDo("wake up", "tomorrow", "medium");
-console.table(
-  projectArray[projectArray.findIndex((obj) => obj.name == "personal")].array
-)
 
-createProject("personal");
-createProject("work");
-createProject("school");
-addToDo("title1", "description1", "today", "personal", "low");
-addToDo("title2", "description2", "today", "personal", "medium");
-addToDo("title3", "description3", "today", "work", "high");
-addToDo("title4", "description4", "today", "work", "low");
-addToDo("title5", "description5", "today", "school", "medium");
-addToDo("title6", "description6", "today", "school", "high");
-
-console.log(projectArray)
-console.log('test')
+//console.log(projectArray)
+console.log(projectArray[projectArray.findIndex(project => project.name == "work")].array)

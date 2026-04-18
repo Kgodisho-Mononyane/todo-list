@@ -1,6 +1,7 @@
 //IMPORTS
 import { addToDo } from "./toDo.js";
 import { projectArray, createProject, Project } from "./projects.js";
+import { format, compareAsc } from "date-fns";
 
 //INIT
 function init() {
@@ -25,8 +26,8 @@ export const addTask = (function () {
     const dialogBox = event.target.closest("#add-dialog");
     const toDoTitle = document.querySelector("#title-input"); //event.target.closest("#title-input");
     const toDoDescription = document.querySelector("#description-input");
-    const toDoDueDate = "26 June"; //document.querySelector("due-input");
-    const toDoProject = "personal"; //document.querySelector("#project-input");
+    const toDoDueDate = "tuesday"//document.querySelector("due-input");
+    const toDoProject = document.querySelector("#project-input");
     const toDoPriority = document.querySelector("#priority-options");
 
     if (addTaskForm) {
@@ -35,8 +36,8 @@ export const addTask = (function () {
       addToDo(
         toDoTitle.value,
         toDoDescription.value,
-        toDoDueDate,
-        toDoProject,
+        toDoDueDate.value,
+        toDoProject.value,
         toDoPriority.value,
       );
       dialogBox.close();
@@ -147,7 +148,7 @@ function addDialogBox() {
   choose.setAttribute("value", "choose");
   choose.textContent = "--Choose a Project--";
   projectInput.appendChild(choose);
-
+  
   projectArray.forEach((project) => {
     const option = document.createElement("option");
 
@@ -369,10 +370,6 @@ function projectDialogBox() {
 //PROJECT FUNCTIONS
 
 //TEST CODE
-displayToDo("number 1", "today", "low");
-displayToDo("wake up", "tomorrow", "medium");
-
-console.log()
 
 //arr.flatMap(project => project.array)
 // console.log(projectArray.array.forEach(element => {

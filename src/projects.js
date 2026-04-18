@@ -29,6 +29,6 @@ export function createProject(name) {
 }
 
 //TEST CODE
-createProject("personal");
-createProject("work");
-createProject("school");
+// createProject("personal");
+// createProject("work");
+// createProject("school");
